@@ -6,13 +6,26 @@ The signature control is a reflective gold-leaf banana used as the master monito
 
 ## Current Status
 
-This repo currently contains the research and implementation handoff for agents.
+This repo contains the research handoff plus a first native macOS scaffold.
 
 - Read [CLAUDE_OPUS_4_8_HANDOFF.md](./CLAUDE_OPUS_4_8_HANDOFF.md) first.
-- The app has not been scaffolded yet.
-- First implementation target: native SwiftUI macOS app with demo audio service and a buildable control-room UI.
+- The current app is a lean AppKit scaffold with a demo control-room surface.
+- It includes a banana master control, demo meters, outputs, snapshots, menu commands, MIDI Learn affordance, and a build/run script.
+
+## Run
+
+```sh
+./script/build_and_run.sh
+```
+
+For a build and process check:
+
+```sh
+./script/build_and_run.sh --verify
+```
+
+The script stages a local `.app` bundle in `dist/` and launches it as a foreground macOS app. It currently compiles the AppKit scaffold directly with `xcrun swiftc`; the `Package.swift` remains as project metadata and a future SwiftPM path once the implementation settles.
 
 ## First Build Prompt
 
 Read `CLAUDE_OPUS_4_8_HANDOFF.md` fully. Build the first PR-sized native macOS scaffold for Banana Pointer. Use SwiftUI, a demo audio service, a settings scene, commands, a menu bar extra if practical, MIDI service scaffolding, dynamic outputs model, and a main control-room layout. Include a high-quality fallback banana master control if no USDZ asset exists yet. Do not implement deep Core Audio routing or per-app audio in the first PR.
-
